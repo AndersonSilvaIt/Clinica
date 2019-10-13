@@ -15,7 +15,7 @@ namespace Data.Entidades
         {
             DataNascimento = (DateTime)SqlDateTime.MinValue;
         }
-
+//bruna gata
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
@@ -23,6 +23,7 @@ namespace Data.Entidades
         public string FoneResidencial { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+
         public string Rua { get; set; }
         public string Numero { get; set; }
         public string Bairro { get; set; }
