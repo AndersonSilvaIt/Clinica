@@ -10,15 +10,18 @@ namespace Data.SQLiteORM
     public class Banco : IDisposable
     {
         private readonly string strPath = @"C:\DB\DBClinica.sqlite";
-        private static SQLiteConnection sqliteConnection;
+		private readonly string basePath = @"C:\DB";
+
+		private static SQLiteConnection sqliteConnection;
         public Banco() 
         {
             try
             {
+				if (!Directory.Exists(basePath))
+					Directory.CreateDirectory(basePath);
+
                 if (!File.Exists(strPath))
-                {
                     SQLiteConnection.CreateFile(strPath);
-                }
 
                 CriarTabelas(typeof(Agenda));
                 CriarTabelas(typeof(Cliente));
